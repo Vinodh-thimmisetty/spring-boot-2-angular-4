@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      database: springangular
+      host: localhost
+      port: 27017
+  devtools:
+      restart:
+        poll-interval: 4000
+
+server:
+  port: 7890
+
+servlet:
+    path:  /
+
