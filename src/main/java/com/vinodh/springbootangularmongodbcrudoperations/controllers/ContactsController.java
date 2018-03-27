@@ -2,6 +2,7 @@ package com.vinodh.springbootangularmongodbcrudoperations.controllers;
 
 import com.vinodh.springbootangularmongodbcrudoperations.model.ContactInfo;
 import com.vinodh.springbootangularmongodbcrudoperations.repository.ContactRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping("/contacts")
+@Slf4j
 public class ContactsController {
 
     @Autowired
@@ -34,8 +36,9 @@ public class ContactsController {
 
     @PutMapping("/edit/{id}")
     public ResponseEntity<ContactInfo> updateContactInfo(@PathVariable("id") String id, @RequestBody ContactInfo contact) {
-        contactRepository.save(contact);
+        log.info("Updating the Contact Info for :: {}", id);
         Optional<ContactInfo> contactInfo = contactRepository.findById(id);
+        if (contactInfo.isPresent()) contactRepository.save(contact);
         return ResponseEntity.ok(contactInfo.orElse(null));
     }
  
@@ -47,6 +50,7 @@ public class ContactsController {
 
     @PostMapping("/newContact")
     public ResponseEntity<String> newContactInfo(@RequestBody ContactInfo contact) {
+        log.info(">>>>>>>>>>>>>>> {}",contact.getEmail());
         contactRepository.save(contact);
         return ResponseEntity.ok("Saved !!");
     }
