@@ -2,6 +2,14 @@ spring:
   data:
     mongodb:
       port: 0
+  profiles:
+    active: test
+  application:
+    name: contacts-list
+  config:
+    name: contacts-list
+  jackson:
+    joda-date-time-format: dd/mm/yyyy HH:MM:SS
 
 logging:
   config: classpath:logback-test.xml

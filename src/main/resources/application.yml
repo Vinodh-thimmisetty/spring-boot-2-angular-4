@@ -6,13 +6,12 @@ spring:
       port: 27017
   devtools:
       restart:
-        poll-interval: 4000
+        poll-interval:
   profiles:
     active: test
 
 server:
   port: 7890
-
-servlet:
+  servlet:
     path:  /
 

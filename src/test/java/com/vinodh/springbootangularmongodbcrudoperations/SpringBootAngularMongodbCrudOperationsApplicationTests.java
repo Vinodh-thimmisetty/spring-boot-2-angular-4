@@ -5,14 +5,12 @@ import com.vinodh.springbootangularmongodbcrudoperations.model.ContactInfo;
 import com.vinodh.springbootangularmongodbcrudoperations.repository.ContactRepository;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.stream.Stream;
 

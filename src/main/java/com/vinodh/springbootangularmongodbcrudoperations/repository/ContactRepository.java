@@ -3,6 +3,7 @@ package com.vinodh.springbootangularmongodbcrudoperations.repository;
 import com.vinodh.springbootangularmongodbcrudoperations.model.ContactInfo;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
